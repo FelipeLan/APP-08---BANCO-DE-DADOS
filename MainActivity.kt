@@ -19,12 +19,19 @@ class MainActivity : AppCompatActivity() {
             //CRIANDO O BANCO DE DADOS
             val bd = openOrCreateDatabase("app", MODE_PRIVATE, null)
             //CRIANDO A TABELA pessoa
-            bd.execSQL("CREATE TABLE IF NOT EXISTS pessoa(nome VARCHAR, idade INT(3))")
+            bd.execSQL("CREATE TABLE IF NOT EXISTS funcionario(nome VARCHAR, idade INT(3), ocupacao VARCHAR, dtNasc DATE, salario DOUBLE)")
 
             //Inserindo dados
-            bd.execSQL("INSERT INTO pessoa (nome, idade) VALUES ('Felipão', 20)")
-            bd.execSQL("INSERT INTO pessoa (nome, idade) VALUES ('Fatec Diadema', 3)")
-            bd.execSQL("INSERT INTO pessoa (nome, idade) VALUES ('Ted Taxi', 18)")
+            bd.execSQL("INSERT INTO pessoa (nome, idade, ocupacao, dtNasc, salario) VALUES ('Felipão', 20, 'Secretário', 2005/13/06, 2.300)")
+            bd.execSQL("INSERT INTO pessoa (nome, idade, ocupacao, dtNasc, salario) VALUES ('Sergio', 20, 'Administrador', 2005/13/06, 2.300)")
+            bd.execSQL("INSERT INTO pessoa (nome, idade, ocupacao, dtNasc, salario) VALUES ('Carlos', 20, 'Secretário', 2005/13/06, 2.300)")
+            bd.execSQL("INSERT INTO pessoa (nome, idade, ocupacao, dtNasc, salario) VALUES ('David', 20, 'Secretário', 2005/13/06, 2.300)")
+            bd.execSQL("INSERT INTO pessoa (nome, idade, ocupacao, dtNasc, salario) VALUES ('Felipão', 20, 'Secretário', 2005/13/06, 2.300)")
+            bd.execSQL("INSERT INTO pessoa (nome, idade, ocupacao, dtNasc, salario) VALUES ('Felipão', 20, 'Secretário', 2005/13/06, 2.300)")
+            bd.execSQL("INSERT INTO pessoa (nome, idade, ocupacao, dtNasc, salario) VALUES ('Felipão', 20, 'Secretário', 2005/13/06, 2.300)")
+            bd.execSQL("INSERT INTO pessoa (nome, idade, ocupacao, dtNasc, salario) VALUES ('Felipão', 20, 'Secretário', 2005/13/06, 2.300)")
+            bd.execSQL("INSERT INTO pessoa (nome, idade, ocupacao, dtNasc, salario) VALUES ('Felipão', 20, 'Secretário', 2005/13/06, 2.300)")
+            bd.execSQL("INSERT INTO pessoa (nome, idade, ocupacao, dtNasc, salario) VALUES ('Felipão', 20, 'Secretário', 2005/13/06, 2.300)")
 
             //recuperar pessoas
             val cursor = bd.rawQuery("SELECT nome, idade FROM pessoa", null)
